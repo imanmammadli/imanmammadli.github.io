@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Iman Mammadli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Iman Mammadli</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <p class="eyebrow">Selected Work</p>
+      <h1 class="page-title">Projects</h1>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="Data Engineering">Data Engineering</button>
+        <button class="filter" data-filter="UI/UX">UI/UX</button>
+        <button class="filter" data-filter="Web Development">Web Development</button>
+        <button class="filter" data-filter="Mobile Development">Mobile Development</button>
+      </div>
+
+      <div class="project-list">
+        <article class="horizontal-project" data-category="Data Engineering">
+          <div class="horizontal-image">Meridian</div>
+          <div class="horizontal-body">
+            <div class="project-meta"><span>2024</span><span class="category data">Data Engineering</span></div>
+            <h2>Meridian</h2>
+            <p>A real-time data pipeline orchestration platform enabling teams to manage complex data flows at scale with full observability and lineage tracking.</p>
+            <div class="tags"><span>Data Engineering</span><span>Python</span><span>Apache Kafka</span><span>dbt</span><span>Snowflake</span></div>
+          </div>
+        </article>
+
+        <article class="horizontal-project" data-category="UI/UX">
+          <div class="horizontal-image">Forma</div>
+          <div class="horizontal-body">
+            <div class="project-meta"><span>2023</span><span class="category ui">UI/UX</span></div>
+            <h2>Forma</h2>
+            <p>A comprehensive design system and component library built for enterprise-scale products with a focus on accessibility and visual consistency.</p>
+            <div class="tags"><span>UI/UX</span><span>React</span><span>TypeScript</span><span>Figma</span><span>Storybook</span></div>
+          </div>
+        </article>
+
+        <article class="horizontal-project" data-category="Web Development">
+          <div class="horizontal-image">Atlas</div>
+          <div class="horizontal-body">
+            <div class="project-meta"><span>2023</span><span class="category web">Web Development</span></div>
+            <h2>Atlas</h2>
+            <p>A location intelligence web application providing spatial analytics and interactive mapping for logistics and supply chain teams.</p>
+            <div class="tags"><span>Web Development</span><span>Next.js</span><span>PostgreSQL</span><span>Mapbox</span><span>TypeScript</span></div>
+          </div>
+        </article>
+
+        <article class="horizontal-project" data-category="Mobile Development">
+          <div class="horizontal-image">Relay</div>
+          <div class="horizontal-body">
+            <div class="project-meta"><span>2022</span><span class="category mobile">Mobile Development</span></div>
+            <h2>Relay</h2>
+            <p>A cross-platform messaging SDK for mobile applications designed for reliability and consistency in low-connectivity environments.</p>
+            <div class="tags"><span>Mobile Development</span><span>Swift</span><span>Kotlin</span><span>React Native</span></div>
+          </div>
+        </article>
+
+        <article class="horizontal-project" data-category="UI/UX">
+          <div class="horizontal-image">Prism</div>
+          <div class="horizontal-body">
+            <div class="project-meta"><span>2022</span><span class="category ui">UI/UX</span></div>
+            <h2>Prism</h2>
+            <p>An analytics dashboard for product teams, surfacing actionable metrics from disparate data sources in a unified interface.</p>
+            <div class="tags"><span>UI/UX</span><span>React</span><span>D3.js</span><span>GraphQL</span></div>
+          </div>
+        </article>
+
+        <article class="horizontal-project" data-category="Web Development">
+          <div class="horizontal-image">Cadence</div>
+          <div class="horizontal-body">
+            <div class="project-meta"><span>2021</span><span class="category web">Web Development</span></div>
+            <h2>Cadence</h2>
+            <p>A workflow automation platform enabling engineering teams to build, schedule, and monitor complex processes.</p>
+            <div class="tags"><span>Web Development</span><span>Go</span><span>React</span><span>PostgreSQL</span><span>Docker</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="container footer">
+    <span class="mono">© 2026 Iman Mammadli</span>
+    <span class="mono">Azerbaijan Baku, AZ</span>
+  </footer>
+
+  <script>
+    const filters = document.querySelectorAll(".filter");
+    const projects = document.querySelectorAll(".horizontal-project");
+
+    filters.forEach(button => {
+      button.addEventListener("click", () => {
+        filters.forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+
+        const selected = button.dataset.filter;
+
+        projects.forEach(project => {
+          project.hidden = selected !== "all" && project.dataset.category !== selected;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

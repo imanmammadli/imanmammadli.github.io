@@ -1,0 +1,1 @@
+Place your CV here as assets/cv.pdf and replace the placeholder profile image when ready.
